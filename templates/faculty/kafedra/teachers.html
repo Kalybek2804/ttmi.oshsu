@@ -1,0 +1,47 @@
+
+{% extends 'kafedra.html' %}
+{% block teacher %}
+{% for teacher in teachers %}
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="du-news-item wow fadeInLeft">
+            <figure><img class="img-responsive" src="{{ teacher.image.url }}" alt=""></figure>
+            <div class="du-caption-box">
+                <div class="du-caption">
+                    <h3>{{ teacher.name }}</h3>
+                    <div class="du-breadcrumb-title">
+                        
+                        <a href="{{ teacher.pdf.url }}" class="btn-default du-common-property">Посмотреть резюме</a>
+                        
+                           
+                    </div><br>
+                    
+                        <details>
+                            <summary> <h4>Уроки</h4> </summary>
+                            <p> <h5>
+
+                        {% for lesson in lessons %}    
+                            <tr>
+                                <td>{{ lesson.num }}</td>
+                                <td><a href="{{ lesson.lesson_pdf.url }}">	
+
+                                {{ lesson.lesson_name }}
+                                </a></td>
+                            </tr><br>
+                        {% endfor %}
+                                            
+                                          </h5></p>
+                        </details>
+                              
+                              
+                        
+                    </div>
+                    
+                    <a href="#"><img src="img/more_arrow1.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+{% endblock %}

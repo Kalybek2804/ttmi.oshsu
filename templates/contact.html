@@ -1,0 +1,128 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Кыргызско-Турецкое отделение | Контакт </title>
+
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">	 
+	 <!-- Main CSS -->
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Menu -->
+	<link href="{% static 'css/flexy-menu.css' %}" rel="stylesheet">
+
+	
+	
+	<!-- Font  -->
+	<link href='http://fonts.googleapis.com/css?family=Passion+One:400,700,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  
+  
+
+  
+
+  
+	{% include 'navbar.html' %}
+
+
+
+
+<div class="dream-university-subpage">
+
+	<!-- Begin breadcrumbs-->
+	<div class="du-page-header du-breadcrumbs">		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 col-sm-7 col-xs-12 text-left du-title">
+					<div class="du-breadcrumb-title"><h3>Контакт</h3></div>				
+				</div>
+				<div class="col-md-5 col-sm-5 col-xs-12 text-right du-breadcrumb">
+					<div class="breadcrumbs">
+						Страница контакта
+					</div>
+				</div>				
+			</div>
+		</div>		
+	</div>
+	<!-- End breadcrumbs-->
+	
+	{% block maps %}
+	
+		{% endblock %}
+
+
+			
+			
+		</div><!-- /.du-contact -->
+	</div><!-- /.du-subpage content -->
+	<!-- End Contact -->
+
+
+</div>
+
+
+
+
+<!--footer-->
+{% include 'footer.html'%}
+<!-- End footer-->
+
+  <!--PRELOAD-->
+<div id="preloader">
+  <div id="status"></div>
+</div>
+<!--end PRELOAD--> 
+
+
+
+
+
+
+
+
+
+   <!-- Main jQuery & other 3rd party Library -->
+   <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+   <script type="text/javascript" src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+   <script type="text/javascript" src="{% static 'js/library/jquery.easing.1.3.js '%}"></script>
+   
+   <!-- UI bottom to top JS -->
+   <script type="text/javascript" src="{% static 'js/library/jquery.ui.totop.js'%}"></script>	
+   
+   <!-- Animation JS -->
+   <script type="text/javascript" src="{% static 'js/library/wow.js' %}"></script>
+   <script type="text/javascript" src="{% static 'js/library/device.min.js' %}"></script>
+   <!-- Menu JS -->
+   <script type="text/javascript" src="{% static 'js/library/flexy-menu.js' %}"></script>
+   <!-- Text rotator JS -->
+   <script type="text/javascript" src="{% static 'js/library/jquery.simple-text-rotator.min.js' %}"></script>
+   <!-- Smooth Scroll JS -->
+   <script type="text/javascript" src="{% static 'js/library/smoothscroll.js' %}"></script>	
+
+   <!-- Custom script -->
+   <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+   
+
+
+
+
+  </body>
+</html>

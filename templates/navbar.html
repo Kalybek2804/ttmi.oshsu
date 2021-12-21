@@ -1,0 +1,31 @@
+{% load static %}
+<!--header-->
+<header class="clearfix">
+ 
+	<div class="box"> 
+		<div class="container">
+		
+			<div class="header-element clearfix"> 
+				<div class="row">
+					<div class="col-md-4">
+						<h1 class="navbar-brand navbar-brand_"><a href="{% url 'news' %}"><img class="img-responsive" src="{% static 'img/logo.png' %}" alt="logo"></a></h1>
+					</div>
+					<div class="col-md-8">
+						<ul class="flexy-menu orange">
+							<li><a href="{% url 'news' %}"><i class="icon-heart"></i>Домой</a></li>
+							<li><a href="{% url 'about' %}"><i class="icon-cogs"></i>О нас</a></li>
+							<li><a href="{% url 'teachers' %}"><i class="icon-th"></i>Кафедра</a>
+							</li>
+							<li><a href="{% static 'files/grafik.pdf'%}"><i class="icon-cogs"></i>Учебный процесс</a></li>
+							<li><a href="{% url 'faculty' %}"><i class="icon-th"></i>Отделение</a></li>
+							
+							<li><a href="{% url 'maps' %}"><i class="icon-envelope"></i>Контакт</a></li>
+                            
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</div>	
+</header>
+<!--header-->

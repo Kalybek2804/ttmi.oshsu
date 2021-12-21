@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block content %}
+{% for new in news %}
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-news-item wow fadeInLeft">
+                        <figure><a href="{% url 'detail' new.id %}"><img class="img-responsive" src="{{ new.image.url }}" alt=""></a></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <a href="{% url 'detail' new.id %}"><h3>{{ new.title }}</h3></a>
+                                {% comment %} <p>{{ new.text|truncatewords:7 }}</p> {% endcomment %}
+                                <p>{{ new.create_date }}</p>
+                                <p>Просмотрено: {{ new.news_view }}</p>
+								
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+				
+{% endblock %}
