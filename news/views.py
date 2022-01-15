@@ -1,35 +1,36 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.db import models
+from django.urls.base import reverse_lazy
 from news.models import New
+from news.forms import NewForm
+from django.views import generic
 
 
-def new(request):
-    news = New.objects.all()
-    return render(request, 'news/new.html', {'news': news})
+class NewListView(generic.ListView):
+    queryset = New.objects.all()
+    model = New
+    template_name = 'news/new.html'
+    context_object_name = "news"
+
+class NewDetailView(generic.DetailView):
+    model = New
+    template_name = 'news/detail.html'
+    context_object_name = "news"
+    
+    def get_object(self):
+        obj = super().get_object()
+        obj.news_view += 1
+        obj.save()
+        return obj
+
+    
 
 
 
-# def about(request):
-#     return render(request, 'about.html')
-
-
-
-def create(request):
-    if request.method == 'POST':
-        title = request.POST.get('title')
-        text = request.POST.get('text')
-        file = request.FILES.get('file')
-        return redirect('index')
-    return render(request, 'news/create.html')
 
 
 
 
-
-def detail(request,id):
-    news = New.objects.get(id=id)
-    news.news_view=news.news_view+1
-    news.save()
-    return render(request, 'news/detail.html', {"news":news})
 
 
 

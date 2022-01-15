@@ -1,5 +1,6 @@
-from django.urls import path, include
-from faculty.views import faculty, programmer, journalism, economika, tourism, teachers, lessons
+from django.urls import path
+from faculty.views import *
+from django.views import generic
 
 urlpatterns = [
     path('', faculty, name='faculty'),
@@ -7,8 +8,9 @@ urlpatterns = [
     path('journalism/', journalism, name='journalismes'),
     path('economika/', economika, name='economikas'),
     path('tourism/', tourism, name='tourismes'),
-    path('teachers/', teachers, name='teachers'),
-    path('lessons/', lessons, name='lessons'),
+    path('teachers/', TeacherListView.as_view(), name='teachers'),
+    path('lessons/', LessonListView.as_view(), name='lessons'),
+    
     
    
 ]

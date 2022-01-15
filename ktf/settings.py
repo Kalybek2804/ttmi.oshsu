@@ -12,6 +12,15 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
+import os
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+import dj-database-url
+
+db_from_env = dj-database-url.config()
+DATABASE['default'].update(db_from_env)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dywgh-bx^8r)bd^7nt^fp^dbeu&y+e-c3y8r7=o2xnqqv4*@j)'
+SECRET_KEY = 'django-insecure-dywgh-bx^8r)bd^7nt^fp^dbeu&y+e-c3y8r7=o2xnqqv4*@j)_6295_123'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,6 +52,7 @@ INSTALLED_APPS = [
     'news',
     'about',
     'faculty',
+    'spec',
  
 ]
 

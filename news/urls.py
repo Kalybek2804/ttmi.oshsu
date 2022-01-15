@@ -1,9 +1,14 @@
-from django.urls import path, include
-from news.views import new, create, detail
+from news.views import *
+from django.urls import path
+
 
 urlpatterns = [
-    path('', new, name='news'),
-    path('create/', create, name = 'create'),
-    path('detail/<int:id>', detail, name='detail'),
-   
+    path('', NewListView.as_view(), name='news'),
+    path('detail/<int:pk>', NewDetailView.as_view(), name='detail'),
 ]
+
+
+
+
+
+

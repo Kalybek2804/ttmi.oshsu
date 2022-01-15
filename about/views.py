@@ -7,3 +7,7 @@ def about(request):
 
 def maps(request):
     return render(request, 'about/maps.html')
+
+
+
+

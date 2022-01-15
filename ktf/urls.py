@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('news.urls')),
     path('about/', include('about.urls')), 
     path('faculty/', include('faculty.urls')),
+    path('spec/', include('spec.urls')),
 
 ]
 

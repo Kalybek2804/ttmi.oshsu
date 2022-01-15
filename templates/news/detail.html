@@ -1,8 +1,83 @@
 {% extends 'detail_new.html' %}
 {% block detail %}
-<div class="post">
-    
-    <h1>{{ new.title }}</h1>
-    <p>{{ new.text }}</p>
+
+
+
+<div class="dream-university-subpage">
+
+	<!-- Begin breadcrumbs-->
+	<div class="du-page-header du-breadcrumbs">		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 col-sm-7 col-xs-12 text-left du-title">
+					<div class="du-breadcrumb-title"><h3>Новости</h3></div>				
+				</div>
+				<div class="col-md-5 col-sm-5 col-xs-12 text-right du-breadcrumb">
+					<div class="breadcrumbs">
+						Страница новостей
+					</div>
+				</div>				
+			</div>
+		</div>		
+	</div>
+	<!-- End breadcrumbs-->
+	
+	
+	<!-- Begin Event -->
+	<div class="du-subpage-content">
+		<div class="du-blog">
+
+			<!-- Begin choose us -->
+			<section class="blog ptb-50">
+
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 text-center">
+							
+                            <section class="about-section-1">
+					
+                                <div class="du-choose-us pt-20">
+                                    <div class="row">
+                                        
+                                        <div class="col-md-9 wow fadeInLeft">
+                                            <div class="du-breadcrumb-title"><h2>{{ news.title }}</h2></div><br>
+                                            <img class="img-responsive" src="{{ news.image.url }}" alt="image"><br><br>
+											
+											<div class="col-xs-12 col-sm-12 col-md-12 text-left">
+                                                <p>
+                                                    <big>&nbsp;&nbsp;&nbsp;&nbsp;{{ news.text }}</big>
+                                                </p>
+											</div>
+											
+                                        </div>
+										
+                                        
+                                    </div>						
+                                </div>
+        
+                            </section>		<br><br><br>
+							
+                        
+							
+						</div>
+					</div>
+				
+				
+						
+					
+				</div>
+			</section>
+			<!-- End event -->
+
+
+			
+			
+		</div><!-- /.du-event -->
+	</div><!-- /.du-subpage content -->
+	<!-- End Evnet -->
+
+
 </div>
+
+
 {% endblock%}

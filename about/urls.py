@@ -1,5 +1,5 @@
-from django.urls import path, include
-from about.views import about, maps
+from django.urls import path
+from about.views import *
 
 urlpatterns = [
     path('', about, name='about'),
@@ -7,3 +7,4 @@ urlpatterns = [
     
    
 ]
+

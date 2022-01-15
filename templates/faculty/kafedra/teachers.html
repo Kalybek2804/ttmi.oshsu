@@ -1,47 +1,116 @@
 
 {% extends 'kafedra.html' %}
 {% block teacher %}
-{% for teacher in teachers %}
-    <div class="col-lg-4 col-md-4 col-sm-4">
-        <div class="du-news-item wow fadeInLeft">
-            <figure><img class="img-responsive" src="{{ teacher.image.url }}" alt=""></figure>
-            <div class="du-caption-box">
-                <div class="du-caption">
-                    <h3>{{ teacher.name }}</h3>
-                    <div class="du-breadcrumb-title">
-                        
+
+<div class="col-md-6 wow fadeInRight">
+ 
+    <section class="du-all-blog-post">
+
+
+        {% for teacher in teachers %}  
+      <div class="row">
+
+
+
+
+					
+    
+       
+         
+        <div class="col-lg-9 col-md-9 col-sm-9">
+          
+            <div class="du-news-item wow fadeInRight">
+              
+             
+                       <details>
+                        <summary><h4>{{ teacher.name }}</h4></summary>
+                <figure><img class="img-responsive" src="{{ teacher.image.url }}" alt=""></figure>
+                <div class="du-caption-box">
+                    <div class="du-caption">
+                       
                         <a href="{{ teacher.pdf.url }}" class="btn-default du-common-property">Посмотреть резюме</a>
-                        
-                           
-                    </div><br>
-                    
-                        <details>
-                            <summary> <h4>Уроки</h4> </summary>
-                            <p> <h5>
-
-                        {% for lesson in lessons %}    
-                            <tr>
-                                <td>{{ lesson.num }}</td>
-                                <td><a href="{{ lesson.lesson_pdf.url }}">	
-
-                                {{ lesson.lesson_name }}
-                                </a></td>
-                            </tr><br>
-                        {% endfor %}
-                                            
-                                          </h5></p>
-                        </details>
-                              
-                              
                         
                     </div>
                     
-                    <a href="#"><img src="img/more_arrow1.png" alt=""></a>
-                </div>
-            </div>
+            
+            
+        
+            <table >
+                {% for lesson in lessons %}
+                <tr>
+                  <td>№</td>
+                  <td>Урок</td>
+                </tr>
+
+                <tr>
+                  <td>{{ lesson.lesson_num }}</td>
+                  <td><a href="{{ lesson.lesson_pdf }}">{{ lesson.lesson_name }}</a></td>
+                </tr>
+                {% endfor %}            
+            </table>
+        
+          </div>
+        
         </div>
-    </div>
-{% endfor %}
+    </details>
+    
+    </div>   
+    
+    </div> 
+    {% endfor %}
+</section>
+     
+  
+  
+  {% comment %} <section class="du-teacher du-section-ash ptb-50 common">
+    <!-- Team Block -->
+      <div class="team-content">
+        <!-- Container -->
+        <div class="container">
+          <div class="row">
+          <h2 class="text-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Состав кафедры</h2>
+          
+         
+            {% for teacher in teachers %}
+              <!-- Team Box -->
+              <div class="team-box wow fadeInRight">
+                <div class="col-md-5 col-sm-8">
+                <details>
+                <!-- Image -->
+                <img src="{{ teacher.image.url }}" class="img-responsive" />
+                <!-- Heading -->
+         <summary><h4 class="text-center">{{ teacher.name }}</h4></summary>
+                <br>
+                <a href="{{ teacher.pdf.url }}" class="btn-default du-common-property">Посмотреть резюме</a><br><br>
+                <h5></h5>
+                <table >
+                  {% for lesson in lessons %}
+                  <tr>
+                    <td>№</td>
+                    <td>Урок</td>
+                  </tr>
+  
+                  <tr>
+                    <td>{{ lesson.lesson_num }}</td>
+                    <td><a href="{{ lesson.lesson_pdf }}">{{ lesson.lesson_name }}</a></td>
+                  </tr>
+                  {% endfor %}            
+              </table>
+
+                
+
+              </div>
+            </details>
+            </div>
+          
+          {% endfor %}
+              
+          </div>
+        </div><!-- /Container -->
+      </div><!-- / Team -->				
+  </section>
+   {% endcomment %}
+  <!-- End teacher -->
 
 
 {% endblock %}

@@ -1,5 +1,12 @@
 from django.shortcuts import render
-from faculty.models import Teacher, Lesson
+from django.db import models
+from django.urls.base import reverse_lazy
+from faculty.models import *
+from faculty.forms import *
+from django.views import generic
+
+
+   
 
 def faculty(request):
     return render(request, 'faculty/faculty.html')
@@ -21,11 +28,27 @@ def tourism(request):
 
 
 
-def teachers(request):
-    teachers = Teacher.objects.all()
-    return render(request, 'faculty/kafedra/teachers.html', {'teachers': teachers})
+# def teachers(request):
+#     teachers = Teacher.objects.all()
+#     return render(request, 'faculty/kafedra/teachers.html', {'teachers': teachers})
 
 
-def lessons(request):
-    lessons = Lesson.objects.all()
-    return render(request, 'faculty/kafedra/teachers.html', {'lessons': lessons})
+# def lesson(request):
+#     lessons = Lesson.objects.all()
+#     return render(request, 'faculty/kafedra/teachers.html', {'lessons': lessons})
+
+
+
+class TeacherListView(generic.ListView):
+    queryset = Teacher.objects.all()
+    model = Teacher
+    template_name = 'faculty/kafedra/teachers.html'
+    context_object_name = "teachers"
+
+    
+
+class LessonListView(generic.ListView):
+    queryset = Lesson.objects.all()
+    model = Lesson
+    template_name = 'faculty/kafedra/teachers.html'
+    context_object_name = "lessons"
